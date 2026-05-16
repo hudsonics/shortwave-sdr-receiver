@@ -1,1 +1,6 @@
-DefaultBuild/ 
+DefaultBuild/
+.settings/
+*.mtud
+*.rcpe
+QualityReport*.txt
+SmartManual Docs/
