@@ -148,7 +148,8 @@ int32_t DSP::process_fm(int32_t i, int32_t q) {
     int32_t filtered = apply_filter(audio, FM, filter_width);
 
     // Scale and centre
-    int32_t out = (filtered * 8) + 2048;
+    //int32_t out = (filtered * 8) + 2048;
+    int32_t out = (filtered >> 4) + 2048;
     return(out);
 }
 
@@ -169,8 +170,8 @@ uint16_t DSP::process(uint16_t i_raw, uint16_t q_raw) {
         agc_peak = agc_peak - (agc_peak >> 8);  // slow decay every sample
     }
     
-    i	= i * DIGITAL_GAIN;
-    q	= q * DIGITAL_GAIN;
+    i = i * DIGITAL_GAIN;
+    q = q * DIGITAL_GAIN;
     
     // TODO: balance IQ signals - Q LO amplitude is lower than I LO - check Rx integration test results.
 

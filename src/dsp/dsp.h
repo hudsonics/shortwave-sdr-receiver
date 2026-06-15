@@ -41,12 +41,11 @@
 #define FM                  4
 
 // AGC
-// TODO: update AGC to use PID loop - current setup causes poor demodulation
 // AGC CV drives MOSFETs which control the RX gain - these are highly non-linear, which should be accounted for!
 #define AGC_TARGET          100         
-#define AGC_INITIAL_VOLTAGE 2000	// 3.4V
-#define AGC_MAX_VOLTAGE     3300        // 4.02V/?dB
-#define AGC_MIN_VOLTAGE     2450	// 2.99V/0dB
+#define AGC_INITIAL_VOLTAGE 2450	// 3.5V / 14dB
+#define AGC_MAX_VOLTAGE     2950  	// 4.02V / 44dB
+#define AGC_MIN_VOLTAGE     2000  	// 2.99V / 0dB
 #define AGC_ATTACK          1
 #define AGC_DECAY           5
 
